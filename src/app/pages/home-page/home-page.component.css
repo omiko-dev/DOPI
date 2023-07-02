@@ -1,0 +1,34 @@
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+section header {
+  margin-top: 162px;
+  padding: 96px 297px;
+  border: 1px dashed;
+  position: relative;
+}
+section header h1 {
+  font-size: 39px;
+}
+section header::before {
+  content: "";
+  padding: 0px 86px;
+  position: absolute;
+  border-top: 1px dashed;
+  bottom: 61px;
+  left: -26px;
+  transform: rotateZ(46deg);
+}
+section header::after {
+  content: "";
+  padding: 0px 86px;
+  position: absolute;
+  border-top: 1px dashed;
+  top: 61px;
+  right: -26px;
+  transform: rotateZ(46deg);
+}
