@@ -1,13 +1,26 @@
 
 
 <section>
-  <header>
+  <div class="video_div">
+    <video autoplay loop>
+      <source src="../../../assets/video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+
+  <header [class]="HeaderAnimation ? 'header_down' : 'header_up'">
 
     <h1>
       D O P I
     </h1>
 
   </header>
+
+  <main>
+    <app-home-btn/>
+  </main>
+
 </section>
 
 

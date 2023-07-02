@@ -1,4 +1,29 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+nav .image {
+  position: absolute;
+}
+nav .img_1 {
+  top: 5px;
+  left: 1px;
+}
+nav .img_2 {
+  top: 5px;
+  right: 5px;
+}
+nav .img_3 {
+  top: 91vh;
+  left: 5px;
+}
+nav .img_4 {
+  top: 91vh;
+  right: -6px;
+}
+
 section {
   position: relative;
-  z-index: 1;
 }

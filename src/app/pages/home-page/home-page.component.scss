@@ -6,43 +6,71 @@ section
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: start;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: hidden;
 
-  header
+  .video_div
   {
-    margin-top: 162px;
-    padding: 96px 297px;
-    border: 1px dashed;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+
+
+    video
+    {
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      &::-webkit-media-controls
+      {
+        box-shadow: inset 0 0 400px 8px;
+      }
+
+    }
+  }
+
+  .header_down
+  {
     position: relative;
+    top: 160px;
+    padding: 40px 254px;
+    border-block: 2px dashed;
+    transition: 1s ease;
+    font-family: 'Dancing Script', cursive;
 
     h1
     {
-      font-size: 39px;
+      font-size: 74px;
     }
 
   }
 
-  header::before
+  .header_up
   {
-    content: "";
-    padding: 0px 86px;
-    position: absolute;
-    border-top: 1px dashed;
-    bottom: 61px;
-    left: -26px;
-    transform: rotateZ(46deg);
+    position: relative;
+    top: -260px;
+    padding: 40px 254px;
+    border-block: 2px dashed;
+    font-family: 'Dancing Script', cursive;
+
+    h1 {
+      font-size: 74px;
+    }
+
   }
 
-  header::after
+
+
+
+
+  main
   {
-    content: "";
-    padding: 0px 86px;
-    position: absolute;
-    border-top: 1px dashed;
-    top: 61px;
-    right: -26px;
-    transform: rotateZ(46deg);
+    z-index: 2;
   }
 
 }
