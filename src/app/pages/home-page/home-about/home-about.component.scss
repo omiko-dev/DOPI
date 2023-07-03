@@ -1,0 +1,30 @@
+
+section
+{
+  width: 372px;
+}
+
+
+header
+{
+
+  width: 100%;
+
+  h1
+  {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 10px;
+    color: aliceblue;
+
+    svg
+    {
+      position: absolute;
+      right: 55px;
+    }
+
+  }
+}
+

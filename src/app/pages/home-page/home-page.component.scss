@@ -39,13 +39,18 @@ section
     position: relative;
     top: 160px;
     padding: 40px 254px;
-    border-block: 2px dashed;
+    border-block: 7px double;
     transition: 1s ease;
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
+    border-color: #00000052;
+    background-color: #0000001a;
+    box-shadow: 0px 0px 200px 66px;
+    backdrop-filter: blur(5px);
 
     h1
     {
       font-size: 74px;
+      color: mistyrose;
     }
 
   }
@@ -55,16 +60,21 @@ section
     position: relative;
     top: -260px;
     padding: 40px 254px;
-    border-block: 2px dashed;
-    font-family: 'Dancing Script', cursive;
+    border-block: 7px double;
+    transition: 1s ease;
+    font-family: "Dancing Script", cursive;
+    border-color: #00000052;
+    background-color: #0000001a;
+    box-shadow: 0px 0px 200px 66px;
+    backdrop-filter: blur(5px);
 
-    h1 {
+    h1
+    {
       font-size: 74px;
+      color: mistyrose;
     }
 
   }
-
-
 
 
 
@@ -76,5 +86,13 @@ section
 }
 
 
+app-home-about
+{
+  z-index: 2;
 
+  position: absolute;
+  top: 234px;
+  left: 3%;
+
+}
 
