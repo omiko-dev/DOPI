@@ -2,6 +2,9 @@
 section
 {
   width: 372px;
+  backdrop-filter: blur(1px);
+  border-block: 2.5px dashed;
+  padding-top: 3px;
 }
 
 
@@ -18,12 +21,9 @@ header
     align-items: center;
     letter-spacing: 10px;
     color: aliceblue;
+    font-size: 24px;
 
-    svg
-    {
-      position: absolute;
-      right: 55px;
-    }
+
 
   }
 }
