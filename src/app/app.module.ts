@@ -11,6 +11,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HomeBtnComponent } from './pages/home-page/home-btn/home-btn.component';
 import { TypingAnimationComponent } from './pages/home-page/home-about/typing-animation/typing-animation.component';
 import { AboutTypingAnimationComponent } from './pages/home-page/home-about/about-typing-animation/about-typing-animation.component';
+import { HomeVideoComponent } from './pages/home-page/home-video/home-video.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AboutTypingAnimationComponent } from './pages/home-page/home-about/abou
     HomePageComponent,
     HomeBtnComponent,
     TypingAnimationComponent,
-    AboutTypingAnimationComponent
+    AboutTypingAnimationComponent,
+    HomeVideoComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
