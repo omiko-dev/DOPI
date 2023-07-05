@@ -81,3 +81,19 @@ app-home-logo {
 .home_logo_up {
   top: -100px;
 }
+
+app-home-scroll-down {
+  z-index: 2;
+}
+
+app-home-login {
+  z-index: 2;
+  position: absolute;
+  left: 30px;
+}
+
+app-home-cart {
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+}

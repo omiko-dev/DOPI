@@ -1,0 +1,45 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100%;
+  gap: 10px;
+}
+section h1 {
+  font-size: 24px;
+  color: mistyrose;
+  font-family: "Roboto Mono";
+  font-weight: 800;
+  text-shadow: 0px 0px 24px;
+}
+section div {
+  position: relative;
+}
+section svg {
+  width: 36px;
+  height: 36px;
+  fill: #ffbf00;
+  animation: anime 1s ease infinite;
+}
+@keyframes anime {
+  0% {
+    position: relative;
+    transform: translateY(0);
+  }
+  25% {
+    position: relative;
+    transform: translateY(-10px);
+  }
+  50% {
+    position: relative;
+    transform: translateY(0);
+  }
+  75% {
+    position: relative;
+    transform: translateY(10px);
+  }
+  100% {
+    position: relative;
+    transform: translateY(0);
+  }
+}

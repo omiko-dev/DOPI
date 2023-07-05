@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeLogoComponent } from './home-logo.component';
+import { HomeScrollDownComponent } from './home-scroll-down.component';
 
-describe('HomeLogoComponent', () => {
-  let component: HomeLogoComponent;
-  let fixture: ComponentFixture<HomeLogoComponent>;
+describe('HomeScrollDownComponent', () => {
+  let component: HomeScrollDownComponent;
+  let fixture: ComponentFixture<HomeScrollDownComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeLogoComponent ]
+      declarations: [ HomeScrollDownComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeLogoComponent);
+    fixture = TestBed.createComponent(HomeScrollDownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
