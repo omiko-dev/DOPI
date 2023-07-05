@@ -10,8 +10,10 @@
 
   <app-home-about/>
 
+  <app-home-logo [ngClass]="LogoAnimation ? '' : 'home_logo_up' "/>
 
-  <header [class]="HeaderAnimation ? 'header_down' : 'header_up'">
+
+  <header [ngClass]="HeaderAnimation ? 'header_down' : 'header_up'">
 
     <h1>
       D O P I
@@ -26,7 +28,6 @@
   <app-home-video/>
 
 </section>
-
 
 
 

@@ -68,5 +68,16 @@ app-home-about {
 app-home-video {
   position: absolute;
   right: 6%;
-  top: 353px;
+  top: 351px;
+}
+
+app-home-logo {
+  z-index: 2;
+  position: absolute;
+  top: 16px;
+  transition: 1s ease;
+}
+
+.home_logo_up {
+  top: -100px;
 }
