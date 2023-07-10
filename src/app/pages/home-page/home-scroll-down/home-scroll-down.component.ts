@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomeScrollDownComponent {
 
+
+  scrollDown() {
+    window.scrollTo({
+      top: 873.6,
+      behavior: 'smooth'
+    })
+  }
+
 }

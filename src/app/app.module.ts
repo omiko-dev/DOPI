@@ -16,6 +16,7 @@ import { HomeLogoComponent } from './pages/home-page/home-logo/home-logo.compone
 import { HomeScrollDownComponent } from './pages/home-page/home-scroll-down/home-scroll-down.component';
 import { HomeLoginComponent } from './pages/home-page/home-login/home-login.component';
 import { HomeCartComponent } from './pages/home-page/home-cart/home-cart.component';
+import { HomeProductsComponent } from './pages/home-page/home-products/home-products.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HomeCartComponent } from './pages/home-page/home-cart/home-cart.compone
     HomeLogoComponent,
     HomeScrollDownComponent,
     HomeLoginComponent,
-    HomeCartComponent
+    HomeCartComponent,
+    HomeProductsComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

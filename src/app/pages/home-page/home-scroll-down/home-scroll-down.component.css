@@ -4,6 +4,7 @@ section {
   align-items: center;
   margin-top: 100%;
   gap: 10px;
+  cursor: pointer;
 }
 section h1 {
   font-size: 24px;

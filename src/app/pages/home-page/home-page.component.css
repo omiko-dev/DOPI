@@ -1,3 +1,7 @@
+:root {
+  --shadow-number: 27px;
+}
+
 section {
   width: 100%;
   height: 100vh;
@@ -6,6 +10,13 @@ section {
   justify-content: flex-start;
   flex-direction: column;
   overflow: hidden;
+}
+section nav {
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  z-index: 3;
+  backdrop-filter: blur(5px);
 }
 section .video_div {
   position: absolute;
@@ -20,7 +31,7 @@ section .video_div video {
   width: 100%;
 }
 section .video_div video::-webkit-media-controls {
-  box-shadow: inset 0 0 485px 27px;
+  box-shadow: inset 0 0 485px var(--shadow-number);
 }
 section .header_down {
   position: relative;
@@ -76,6 +87,8 @@ app-home-logo {
   position: absolute;
   top: 16px;
   transition: 1s ease;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .home_logo_up {
@@ -83,7 +96,7 @@ app-home-logo {
 }
 
 app-home-scroll-down {
-  z-index: 2;
+  z-index: 3;
 }
 
 app-home-login {

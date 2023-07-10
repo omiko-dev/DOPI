@@ -7,13 +7,15 @@
     </video>
   </div>
 
-  <app-home-login/>
+  <nav>
+    <app-home-login/>
 
-  <app-home-cart/>
+    <app-home-logo [ngClass]="LogoAnimation ? '' : 'home_logo_up' "/>
 
+    <app-home-cart/>
+  </nav>
   <app-home-about/>
 
-  <app-home-logo [ngClass]="LogoAnimation ? '' : 'home_logo_up' "/>
 
 
   <header [ngClass]="HeaderAnimation ? 'header_down' : 'header_up'">
@@ -33,6 +35,13 @@
   <app-home-scroll-down/>
 
 </section>
+
+<main>
+
+  <app-home-products/>
+
+
+</main>
 
 
 
