@@ -11,3 +11,7 @@ input[type=password] {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+span {
+  display: block;
+}

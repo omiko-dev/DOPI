@@ -1,4 +1,4 @@
-class LoginDto {
-   Email: string = '';
-   Password: string = '';
+interface ILoginDto {
+   Email: string;
+   Password: string;
 }
