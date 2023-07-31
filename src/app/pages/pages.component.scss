@@ -1,39 +1,12 @@
 
-nav
-{
-
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 0;
-
-  .image {
-    position: absolute;
-  }
-
-  .img_1 {
-    top: 5px;
-    left: 1px;
-  }
-
-  .img_2 {
-    top: 5px;
-    right: 5px;
-  }
-
-  .img_3 {
-    top: 91vh;
-    left: 5px;
-  }
-
-  .img_4 {
-    top: 91vh;
-    right: -6px;
-  }
-
-}
 
 section
 {
   position: relative;
+}
+
+
+app-home-page
+{
+  scroll-snap-type: y mandatory;
 }

@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/Services/http.service';
 
 @Component({
   selector: 'app-home-page',
@@ -10,23 +12,12 @@ export class HomePageComponent implements OnInit {
   WindowScroll: number = 0;
   Root = document.documentElement;
 
+  constructor(private readonly httpService: HttpService, http: HttpClient){}
+
   @HostListener('window:scroll', ['$event'])
   OnWindowScroll(event: Event) {
     this.WindowScroll = (window.scrollY + 108) / 1.8;
     this.Root.style.setProperty('--shadow-number', `${this.WindowScroll}px`);
-
-    // if (window.scrollY > 0 && window.scrollY < 436.8) {
-    //   window.scrollTo({
-    //     top: 0,
-    //     behavior: 'smooth'
-    //   });
-    // }
-    // if (window.scrollY > 436.8 && window.scrollY < 873.6) {
-    //   window.scrollTo({
-    //     top: 873.6,
-    //     behavior: 'smooth',
-    //   });
-    // }
 
   }
 
@@ -34,6 +25,11 @@ export class HomePageComponent implements OnInit {
   LogoAnimation: boolean = false;
 
   ngOnInit(): void {
+
+    this.httpService.test().subscribe(data => {
+      console.log(data);
+
+    })
 
     this.Root.style.setProperty('--shadow-number', `27px`);
 

@@ -1,0 +1,14 @@
+<section>
+
+  <form [formGroup]="LoginDto" (ngSubmit)="Login()">
+
+    <label for="Email">Enter Email</label>
+    <input type="email" name="Email" formControlName="Email">
+
+    <label for="Password">Enter Password</label>
+    <input type="password" name="Password" formControlName="Password">
+
+    <button type="submit">Login</button>
+  </form>
+
+</section>

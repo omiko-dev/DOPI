@@ -1,7 +1,13 @@
+
+// Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { SwiperModule } from 'swiper/angular';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
+// Components
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { TypesPageComponent } from './pages/types-page/types-page.component';
@@ -17,6 +23,11 @@ import { HomeScrollDownComponent } from './pages/home-page/home-scroll-down/home
 import { HomeLoginComponent } from './pages/home-page/home-login/home-login.component';
 import { HomeCartComponent } from './pages/home-page/home-cart/home-cart.component';
 import { HomeProductsComponent } from './pages/home-page/home-products/home-products.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterComponent } from './login-form/register/register.component';
+import { LoginComponent } from './login-form/login/login.component';
+import { LoginSwiperComponent } from './login-form/login-swiper/login-swiper.component';
+
 
 @NgModule({
   declarations: [
@@ -34,9 +45,19 @@ import { HomeProductsComponent } from './pages/home-page/home-products/home-prod
     HomeScrollDownComponent,
     HomeLoginComponent,
     HomeCartComponent,
-    HomeProductsComponent
+    HomeProductsComponent,
+    LoginFormComponent,
+    RegisterComponent,
+    LoginComponent,
+    LoginSwiperComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    SwiperModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
