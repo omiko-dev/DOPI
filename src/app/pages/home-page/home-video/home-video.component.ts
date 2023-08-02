@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
       <h4>How make Dopi</h4>
 
       <div>
-        <video controls muted>
-          <source src="../../../../assets/choco_make.mp4" type="video/mp4" />
+        <video controls  muted>
+          <source src="../../../../assets/choco_make.mp4" type="video/mp4"/>
         </video>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { ILoginDto } from 'src/app/Dto/LoginDto';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
@@ -10,33 +10,33 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class LoginComponent {
 
-  constructor(private fb: FormBuilder, private authService: AuthService) { }
-  correct = true;
+  constructor(private authService: AuthService, private _router: Router) { }
 
-  LoginDto = this.fb.group({
-    Email: ['', [Validators.required, Validators.email]],
-    Password: ['', [Validators.required, Validators.min(6)]]
-  })
+  Incorrect: boolean = false;
 
-  get LoginFormControl() {
-    return this.LoginDto.controls;
+  LoginDto: ILoginDto = {
+    Email: '',
+    Password: ''
   }
 
+  Login(data: any) {
 
-  Login() {
-
-    if (this.LoginDto.invalid) {
-      this.correct = false;
+    if (data.invalid)
       return;
-    }
 
-    console.log(this.LoginDto.value);
 
-    this.authService.Login(this.LoginDto.value).subscribe(token => {
-      localStorage.setItem('token', token);
-      console.log(token);
-    })
-    this.correct = true;
+    this.authService.Login(this.LoginDto).subscribe(
+      data => {
+        localStorage.setItem('token', data)
+        this.Incorrect = false;
+        this._router.navigate(['/']);
+      },
+      err => {
+        this.Incorrect = true;
+      }
+
+
+    )
   }
 
 }

@@ -1,35 +1,30 @@
 <section>
 
-  <form [formGroup]="LoginDto" (ngSubmit)="Login()">
+  <form #myForm="ngForm" (ngSubmit)="Login(myForm)">
 
     <label for="Email">Enter Email</label>
-    <input type="email" name="Email" formControlName="Email">
-    <span class="text-denger"
-    *ngIf="
-    LoginFormControl.Email.errors?.['required'] &&  (LoginFormControl.Email.touched || LoginFormControl.Email.dirty) ||
-        LoginFormControl.Email.errors?.['email'] &&  (LoginFormControl.Email.touched || LoginFormControl.Email.dirty)
-    ">
-      Invalid Email
-    </span>
+    <input type="email" name="email" [(ngModel)]="LoginDto.Email" required email #email="ngModel">
+    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+      <span class="invalid-feedback">Enter Correct Email</span>
+    </div>
 
     <br>
     <br>
 
     <label for="Password">Enter Password</label>
-    <input type="password" name="Password" formControlName="Password">
-    <span class="text-denger" *ngIf="
-        LoginFormControl.Password.errors?.['required'] &&  (LoginFormControl.Password.touched || LoginFormControl.Password.dirty) ||
-        LoginFormControl.Password.errors?.['min'] &&  (LoginFormControl.Password.touched || LoginFormControl.Password.dirty)
-    ">
-      Invalid Passwrod
-    </span>
+    <input type="password" name="Password"  [(ngModel)]="LoginDto.Password" required minlength="6" #password="ngModel">
+    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+      <span *ngIf="password.errors?.['minlength']" class="invalid-feedback">Minimum 6 Symbol</span>
+
+      <span *ngIf="!password.errors?.['minlength']" class="invalid-feedback">Enter Correct Password</span>
+    </div>
 
     <br>
     <br>
 
     <button type="submit">Login</button>
 
-    <span *ngIf="!correct">Email or Password Is Inccorect</span>
+    <span *ngIf="Incorrect" class="invalid-feedback">Email or Password Is Inccorect</span>
   </form>
 
 </section>
