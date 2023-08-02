@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { UserService } from 'src/app/Services/user.service';
 import { HttpService } from 'src/app/Services/http.service';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-home-page',
@@ -12,7 +13,7 @@ export class HomePageComponent implements OnInit {
   WindowScroll: number = 0;
   Root = document.documentElement;
 
-  constructor(private readonly httpService: HttpService, http: HttpClient){}
+  constructor(private readonly httpService: HttpService, private readonly authService: AuthService){}
 
   @HostListener('window:scroll', ['$event'])
   OnWindowScroll(event: Event) {
@@ -26,10 +27,16 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.httpService.test().subscribe(data => {
-      console.log(data);
 
-    })
+      this.authService.RefreshToken().subscribe(
+        result => {
+          console.log(result);
+        },
+        err => {
+          console.log(err);
+        }
+
+      )
 
     this.Root.style.setProperty('--shadow-number', `27px`);
 

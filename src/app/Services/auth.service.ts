@@ -17,7 +17,6 @@ export class AuthService {
       data,
       {responseType: 'text'}
     );
-
   }
 
   Register(data: IRegisterDto) {
@@ -27,8 +26,14 @@ export class AuthService {
       data,
       {responseType: 'json'}
     );
-
   }
 
+  RefreshToken() {
+    return this.http.post(
+      'https://localhost:7008/api/Auth/Refresh-Token',
+      true,
+      { responseType: 'text'}
+    );
+  }
 
 }

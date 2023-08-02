@@ -27,6 +27,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterComponent } from './login-form/register/register.component';
 import { LoginComponent } from './login-form/login/login.component';
 import { LoginSwiperComponent } from './login-form/login-swiper/login-swiper.component';
+import { BackLeftIconComponent } from './Icons/back-left-icon/back-left-icon.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { LoginSwiperComponent } from './login-form/login-swiper/login-swiper.com
     RegisterComponent,
     LoginComponent,
     LoginSwiperComponent,
+    BackLeftIconComponent,
   ],
   imports: [
     BrowserModule,

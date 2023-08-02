@@ -4,16 +4,35 @@
 
   <form #myForm="ngForm" (ngSubmit)="Submit(myForm)">
 
-    <label for="Username">Enter Username *</label>
-    <input type="text" name="User" [(ngModel)]="user.Name">
+    <label for="User">Enter Username *</label>
+    <input type="text" name="User" [(ngModel)]="user.Name" #nameInput="ngModel" required minlength="2">
+    <div *ngIf="nameInput.invalid && Submit">
+      <span *ngIf="nameInput.errors?.['minlength']" >
+        Enter Minimum 3 Symbol!
+      </span>
+    </div>
 
     <label for="Email">Enter Email *</label>
-    <input type="email" name="Email" [(ngModel)]="user.Email" required >
+    <input type="email" name="Email" [(ngModel)]="user.Email" required email #emailInput="ngModel" >
+    <div *ngIf="emailInput.invalid && Submit">
+      <span *ngIf="emailInput.errors?.['email']" >
+        Enter Email!
+      </span>
+    </div>
 
     <label for="Password">Enter Password *</label>
-    <input type="password" name="Password" [(ngModel)]="user.Password" required minlength="6">
+    <input type="password" name="PasswordHash" [(ngModel)]="user.PasswordHash" required minlength="6" #passwordInput="ngModel">
+    <div *ngIf="passwordInput.invalid && Submit">
+      <span *ngIf="passwordInput.errors?.['minlength']" >
+        Enter Minimum 6 Symbol!
+      </span>
+    </div>
 
     <button type="submit">Register</button>
+    <div>
+      <span *ngIf="OtherEmailReq">Choose another email, It Already Choose Someone</span>
+      <span *ngIf="InvalidInput">Incorrect Information</span>
+    </div>
 
   </form>
 

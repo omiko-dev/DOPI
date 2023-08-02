@@ -10,27 +10,38 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class RegisterComponent {
 
+  OtherEmailReq: boolean = false;
+  InvalidInput: boolean = false;
+
   constructor(private router: Router, private readonly authService: AuthService){}
 
   user: IRegisterDto = {
     Email: '',
     Name: '',
-    Password: ''
+    PasswordHash: ''
   }
 
   Submit(user: any) {
 
     if (user.invalid) {
+      this.InvalidInput = true;
       return;
-    }
+    };
 
-    console.log(user.value);
+    // console.log(user.value);
 
-    this.authService.Register(this.user).subscribe((data) => {
-      console.log(data);
-    });
+    this.authService.Register(this.user).subscribe(
+      data => {
+        this.OtherEmailReq = false;
+        this.router.navigate(['/log/login']);
 
-    this.router.navigate(['/log/login'])
+      },
+      err => {
+        this.OtherEmailReq = true;
+
+      }
+    );
+
 
   }
 

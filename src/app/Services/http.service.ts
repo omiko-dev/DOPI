@@ -9,10 +9,11 @@ export class HttpService {
   constructor(private readonly http: HttpClient) { }
 
 
-  test() {
+  getProduct() {
     return this.http.get('https://localhost:7008/api/Product');
-
   }
+
+  
 
 
 }
