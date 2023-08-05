@@ -26,12 +26,11 @@ export class AuthService {
   }
 
   RefreshToken(RefreshToken: string) {
-    console.log(RefreshToken);
-       const encodedRefreshToken = encodeURIComponent(RefreshToken);
+    const refreshToken = encodeURIComponent(RefreshToken);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(
       'https://localhost:7008/api/Auth/Refresh-Token?refreshToken=' +
-        encodedRefreshToken,
+        refreshToken,
       true,
       {
         responseType: 'text',

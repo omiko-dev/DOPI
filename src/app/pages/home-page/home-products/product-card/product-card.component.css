@@ -1,0 +1,29 @@
+main {
+  margin: 10px;
+}
+main section {
+  width: 349px;
+  height: 612px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: inset -20px 0px 166px -152px;
+}
+main section .img {
+  color: red;
+}
+main section .information .price {
+  display: inline;
+  margin-right: 113px;
+}
+main section .information .btn {
+  background: #FFEB3B;
+}
+main section .information .btn a {
+  color: #000;
+}
+
+img {
+  height: 400px;
+}

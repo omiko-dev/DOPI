@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { IProduct } from 'src/app/Dto/Product';
+import { ProductService } from 'src/app/Services/product.service';
+import { IProductFilter } from './product-filter/product-filter.component';
 
 @Component({
   selector: 'app-home-products',
   templateUrl: './home-products.component.html',
-  styleUrls: ['./home-products.component.scss']
+  styleUrls: ['./home-products.component.scss'],
 })
 export class HomeProductsComponent {
+  constructor(private productService: ProductService) { }
+
+
+
+  filterData($event: any) {
+    $event;
+  }
+
+  Product$: Observable<IProduct[]> = this.productService.getProduct();
 
 }

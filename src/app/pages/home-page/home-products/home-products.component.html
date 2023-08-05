@@ -1,3 +1,8 @@
-<section>
-  <p>home-products works!</p>
-</section>
+<main>
+
+  <app-product-filter (filter)="filterData($event)"/>
+
+  <section *ngFor="let data of Product$ | async">
+      <app-product-card [product]="data"/>
+  </section>
+</main>

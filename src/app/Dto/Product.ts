@@ -1,14 +1,14 @@
 export interface IProduct {
-  Id: number;
-  ProductName: string;
-  Description: string;
-  Brand: string;
-  Price: number;
-  CocoaParcentage: number;
-  Ingredients: string[];
-  Allergens: string[];
-  ImageURL: string[];
-  Flavor: number;
+  id: number;
+  productName: string;
+  description: string;
+  brand: string;
+  price: number;
+  cocoaParcentage: number;
+  ingredients: string[];
+  allergens: string[];
+  imageURL: string[];
+  flavor: number;
 }
 
 enum Flavor {

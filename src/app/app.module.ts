@@ -6,7 +6,6 @@ import { SwiperModule } from 'swiper/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CookieService } from 'ngx-cookie-service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -29,6 +28,15 @@ import { RegisterComponent } from './login-form/register/register.component';
 import { LoginComponent } from './login-form/login/login.component';
 import { LoginSwiperComponent } from './login-form/login-swiper/login-swiper.component';
 import { BackLeftIconComponent } from './Icons/back-left-icon/back-left-icon.component';
+import { ProductCardComponent } from './pages/home-page/home-products/product-card/product-card.component';
+import { ProductFilterComponent } from './pages/home-page/home-products/product-filter/product-filter.component';
+
+// Services
+import { AuthService } from './Services/auth.service';
+import { ProductService } from './Services/product.service';
+import { UserService } from './Services/user.service';
+import { CookieService } from 'ngx-cookie-service';
+
 
 
 @NgModule({
@@ -53,6 +61,8 @@ import { BackLeftIconComponent } from './Icons/back-left-icon/back-left-icon.com
     LoginComponent,
     LoginSwiperComponent,
     BackLeftIconComponent,
+    ProductCardComponent,
+    ProductFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +72,7 @@ import { BackLeftIconComponent } from './Icons/back-left-icon/back-left-icon.com
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [CookieService],
+  providers: [CookieService, AuthService, ProductService, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

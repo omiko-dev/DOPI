@@ -1,0 +1,28 @@
+
+
+<main>
+
+  <h4>Filter</h4>
+  <hr>
+
+  <label for="productName">product name</label>
+  <input type="text" name="productName" class="form-control" [(ngModel)]="filterData.productName">
+  <hr>
+
+  <label for="productPrice">product price: {{ filterData.productPrice }}.00$</label>
+  <input type="range" name="productPrice" class="form-range" max="10" min="0" [(ngModel)]="filterData.productPrice">
+  <hr>
+
+  <label for="productFlavor">product Flavor</label>
+  <select class="form-select" name="productFlavor" [(ngModel)]="filterData.productFlavor">
+    <option selected="NaN">NaN</option>
+    <option value="0">Dark</option>
+    <option value="1">Milk</option>
+    <option value="2">White</option>
+  </select>
+
+  <button class="btn btn-success" (click)="filterBtn()">Filter</button>
+
+</main>
+
+
