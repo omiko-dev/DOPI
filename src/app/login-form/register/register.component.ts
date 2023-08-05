@@ -6,46 +6,54 @@ import { AuthService } from 'src/app/Services/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-
   OtherEmailReq: boolean = false;
   InvalidInput: boolean = false;
+  InvalidRepeatPass: boolean = false;
 
-  constructor(private router: Router, private readonly authService: AuthService){}
+  constructor(
+    private router: Router,
+    private readonly authService: AuthService
+  ) {}
 
-  user: IRegisterDto = {
+  user = {
     Email: '',
     Name: '',
-    PasswordHash: ''
-  }
+    Password: '',
+    PasswordRepeat: '',
+  };
 
   Submit(user: any) {
-
     if (user.invalid) {
       this.InvalidInput = true;
       return;
-    };
+    }
+    if (this.user.Password !== this.user.PasswordRepeat) {
+      this.InvalidRepeatPass = true;
+      return;
+    }
 
-    // console.log(user.value);
 
-    this.authService.Register(this.user).subscribe(
-      data => {
+    var newUser: IRegisterDto = {
+      Email: this.user.Email,
+      Name: this.user.Name,
+      PasswordHash: this.user.Password
+    }
+
+    this.authService.Register(newUser).subscribe(
+      (data) => {
         this.OtherEmailReq = false;
         this.router.navigate(['/log/login']);
-
       },
-      err => {
+      (err) => {
         this.OtherEmailReq = true;
-
+        this.InvalidRepeatPass = false;
+        this.InvalidInput = false;;
       }
     );
-
-
   }
-
-
 }
 
 

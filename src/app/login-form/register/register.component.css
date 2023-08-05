@@ -1,14 +1,43 @@
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+}
+form div {
+  width: 91%;
+}
+
 label {
   display: block;
   margin-bottom: 5px;
+  width: 100%;
+  padding-left: 19px;
 }
 
-input[type=text],
-input[type=email],
-input[type=password] {
-  width: 100%;
+input {
+  width: 95%;
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  outline: none;
+}
+
+span {
+  display: block;
+  margin: none;
+  margin-bottom: 5px;
+}
+
+button {
+  box-shadow: inset -1px -1px 1px;
+  width: 80%;
+  border-radius: 0.5em;
+  border: none;
+  height: 48px;
+}
+
+button:active {
+  box-shadow: -1px -1px 1px;
 }

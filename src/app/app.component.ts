@@ -17,10 +17,10 @@ export class AppComponent {
     var RefreshToken = this.cookie.get('Refresh_Token');
     authService.RefreshToken(RefreshToken).subscribe(
       (data) => {
-        console.log(data);
+        localStorage.setItem("token", data);
       },
       (err) => {
-        console.log(err);
+        return err;
       }
     );
   }

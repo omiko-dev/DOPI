@@ -35,6 +35,7 @@ export class AuthService {
       true,
       {
         responseType: 'text',
+        withCredentials: true,
         headers: headers,
       }
     );
