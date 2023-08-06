@@ -15,7 +15,7 @@
 
       <p class="price">{{ product.price }}$</p>
 
-      <div class="btn">
+      <div class="btn" routerLink="/product" [queryParams]="product">
         <a>Show More</a>
       </div>
 

@@ -2,7 +2,9 @@
 
   <app-product-filter (filter)="filterData($event)"/>
 
-  <section *ngFor="let data of FillterProduct$ | async">
-      <app-product-card [product]="data"/>
-  </section>
+  <div>
+    <section *ngFor="let data of FillterProduct$ | async">
+        <app-product-card [product]="data"/>
+    </section>
+  </div>
 </main>

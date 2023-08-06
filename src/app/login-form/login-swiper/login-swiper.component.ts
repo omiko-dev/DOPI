@@ -44,4 +44,4 @@ SwiperCore.use([Autoplay, Pagination]);
     `,
   ],
 })
-export class LoginSwiperComponent {}
+export class LoginSwiperComponent { }

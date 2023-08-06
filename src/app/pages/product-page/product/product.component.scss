@@ -1,0 +1,34 @@
+main
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  section
+  {
+    display: flex;
+    background-color: aqua;
+    width: 80%;
+    height: 80%;
+
+
+    .product-swiper
+    {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      div
+      {
+        width: 75%;
+        height: 100%;
+      }
+
+    }
+
+  }
+}

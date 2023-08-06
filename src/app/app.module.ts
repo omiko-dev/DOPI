@@ -30,12 +30,15 @@ import { LoginSwiperComponent } from './login-form/login-swiper/login-swiper.com
 import { BackLeftIconComponent } from './Icons/back-left-icon/back-left-icon.component';
 import { ProductCardComponent } from './pages/home-page/home-products/product-card/product-card.component';
 import { ProductFilterComponent } from './pages/home-page/home-products/product-filter/product-filter.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductComponent } from './pages/product-page/product/product.component';
 
 // Services
 import { AuthService } from './Services/auth.service';
 import { ProductService } from './Services/product.service';
 import { UserService } from './Services/user.service';
 import { CookieService } from 'ngx-cookie-service';
+import { ProductSwiperComponent } from './pages/product-page/product/product-swiper/product-swiper.component';
 
 
 
@@ -63,6 +66,9 @@ import { CookieService } from 'ngx-cookie-service';
     BackLeftIconComponent,
     ProductCardComponent,
     ProductFilterComponent,
+    ProductPageComponent,
+    ProductComponent,
+    ProductSwiperComponent,
   ],
   imports: [
     BrowserModule,

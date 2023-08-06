@@ -15,7 +15,6 @@ export class HomePageComponent implements OnInit {
   OnWindowScroll(event: Event) {
     this.WindowScroll = (window.scrollY + 108) / 1.8;
     this.Root.style.setProperty('--shadow-number', `${this.WindowScroll}px`);
-
   }
 
   HeaderAnimation: boolean = false;

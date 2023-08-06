@@ -1,0 +1,47 @@
+<main>
+
+  <section>
+
+    <div class="product-swiper">
+      <div>
+        <app-product-swiper [imagesUrl]="Data.imageURL"/>
+      </div>
+    </div>
+
+    <aside>
+
+      <h1>{{Data.productName}}</h1>
+
+      <div class="desc">
+        <p>{{Data.description}}</p>
+      </div>
+
+      <div class="brend">
+        <p>{{Data.brand}}</p>
+      </div>
+
+      <div class="flavor">
+        <p>{{flavor}}</p>
+      </div>
+
+      <div class="ingredients">
+        <span *ngFor="let ingredients of Data.ingredients">| {{ingredients}} | </span>
+      </div>
+
+      <div class="cocoaProc">
+        <p>{{Data.cocoaPercentage}}%</p>
+      </div>
+
+      <div class="price">
+        <p>{{Data.price}}</p>
+      </div>
+
+
+
+
+    </aside>
+
+
+  </section>
+
+</main>

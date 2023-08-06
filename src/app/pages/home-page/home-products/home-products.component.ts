@@ -6,12 +6,31 @@ import { IProductFilter } from './product-filter/product-filter.component';
 
 @Component({
   selector: 'app-home-products',
-  templateUrl: './home-products.component.html',
-  styleUrls: ['./home-products.component.scss'],
+  template: `
+    <style>
+      main {
+        display: flex;
+        height: 100vh;
+      }
+      div {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+
+    <main>
+      <app-product-filter (filter)="filterData($event)" />
+
+      <div>
+        <section *ngFor="let data of FillterProduct$ | async">
+          <app-product-card [product]="data" />
+        </section>
+      </div>
+    </main>
+  `,
 })
 export class HomeProductsComponent {
   constructor(private productService: ProductService) {}
-
 
   Product$: Observable<IProduct[]> = this.productService.getProduct();
 
@@ -21,14 +40,11 @@ export class HomeProductsComponent {
     this.FillterProduct$ = this.Product$.pipe(
       map((product) => {
         return product.filter((p) => {
-          console.log($event);
-
           return (
             p.price > $event.productPrice &&
             p.productName.toLowerCase().includes($event.productName) &&
             $event.productFlavor.includes(p.flavor)
           );
-
         });
       })
     );
