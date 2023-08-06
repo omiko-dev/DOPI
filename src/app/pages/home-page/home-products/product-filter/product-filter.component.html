@@ -6,7 +6,7 @@
   <hr>
 
   <label for="productName">product name</label>
-  <input type="text" name="productName" class="form-control" [(ngModel)]="filterData.productName">
+  <input type="text" name="productName" class="form-control" placeholder="enter product name" [(ngModel)]="filterData.productName">
   <hr>
 
   <label for="productPrice">product price: {{ filterData.productPrice }}.00$</label>
@@ -14,14 +14,18 @@
   <hr>
 
   <label for="productFlavor">product Flavor</label>
-  <select class="form-select" name="productFlavor" [(ngModel)]="filterData.productFlavor">
-    <option selected="NaN">NaN</option>
-    <option value="0">Dark</option>
-    <option value="1">Milk</option>
-    <option value="2">White</option>
+  <select class="form-select" name="productFlavor" aria-placeholder="NaN" [(ngModel)]="filterData.productFlavor">
+    <option [selected]="[0, 1, 2]">NaN</option>
+    <option [value]="[0]">Dark</option>
+    <option [value]="[1]">Milk</option>
+    <option [value]="[2]">White</option>
   </select>
 
+  <br>
+
   <button class="btn btn-success" (click)="filterBtn()">Filter</button>
+
+  <button class="btn btn-danger" (click)="filterRefreshBtn()">Clear</button>
 
 </main>
 

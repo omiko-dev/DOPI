@@ -4,16 +4,19 @@ import { Component } from '@angular/core';
   selector: 'app-home-logo',
   template: `
     <svg
+      (click)="upBtn()"
       xmlns="http://www.w3.org/2000/svg"
       version="1.0"
       width="60px"
       height="60px"
       viewBox="0 0 512.000000 512.000000"
       preserveAspectRatio="xMidYMid meet"
+      style="cursor: pointer;"
     >
       <g
         transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
         stroke="none"
+        style="fill: #f7ac2e;"
       >
         <path
           d="M66 5101 c-62 -42 -69 -67 -63 -219 9 -207 46 -352 141 -547 111 -227 280 -420 492 -562 l60 -41 477 239 c262 132 477 243 477 248 0 4 -24 56 -54 114 -199 392 -550 663 -987 762 -53 12 -138 18 -294 22 -207 4 -222 3 -249 -16z"
@@ -35,13 +38,13 @@ import { Component } from '@angular/core';
         />
       </g>
     </svg>
-  `,
-  styles: [
-    `
-      g {
-        fill: #f7ac2e;
-      }
-    `,
-  ],
+  `
 })
-export class HomeLogoComponent {}
+export class HomeLogoComponent {
+  upBtn() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+}
