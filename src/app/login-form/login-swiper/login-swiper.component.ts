@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 
-SwiperCore.use([Autoplay, Pagination]);
+SwiperCore.use([Autoplay]);
 
 @Component({
   selector: 'app-login-swiper',

@@ -5,13 +5,16 @@ main
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: inset -20px 0px 268px -152px;
+  border-radius: 5px;
 
   section
   {
     display: flex;
-    background-color: aqua;
     width: 80%;
     height: 80%;
+    padding: 10px;
+    box-shadow: 0 0 398px -26px #4e4e4e;
 
 
     .product-swiper
@@ -30,5 +33,56 @@ main
 
     }
 
+    aside
+    {
+      padding-right: 85px;
+
+      .last
+      {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+          .price
+          {
+
+            display: inline;
+
+            .priceNum
+            {
+              font-size: 45px;
+              font-weight: 700;
+            }
+
+          }
+
+          .button
+          {
+            display: inline-flex;
+            gap: 20px;
+          }
+      }
+
+
+    }
+
+
   }
 }
+
+p
+{
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+hr
+{
+  margin: 1rem  200px;
+}
+
+span
+{
+  font-size: 17px;
+}
+

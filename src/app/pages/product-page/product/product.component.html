@@ -13,29 +13,51 @@
       <h1>{{Data.productName}}</h1>
 
       <div class="desc">
+        <span>Description:</span>
         <p>{{Data.description}}</p>
       </div>
 
+      <hr>
+
       <div class="brend">
-        <p>{{Data.brand}}</p>
+        <p>Brand: {{Data.brand}}</p>
       </div>
+
+      <hr>
 
       <div class="flavor">
-        <p>{{flavor}}</p>
+        <p>Flavor: {{flavor}}</p>
       </div>
+
+      <hr>
 
       <div class="ingredients">
-        <span *ngFor="let ingredients of Data.ingredients">| {{ingredients}} | </span>
+        <p>ingredients: </p>
+        <span *ngFor="let ingredients of Data.ingredients; let i = index">{{i+1}}) {{ingredients}}; </span>
       </div>
+
+      <hr>
 
       <div class="cocoaProc">
-        <p>{{Data.cocoaPercentage}}%</p>
+        <p>Cocoa Percentage: {{Data.cocoaPercentage}}%</p>
       </div>
 
-      <div class="price">
-        <p>{{Data.price}}</p>
-      </div>
+      <hr>
 
+      <div class="last">
+
+              <div class="price">
+                <span>Price: </span>
+                <span class="priceNum">{{Data.price}}$</span>
+              </div>
+
+              <div class="button">
+                <button class="btn btn-info">Add Cart</button>
+                <button class="btn btn-success">Buy</button>
+              </div>
+
+
+      </div>
 
 
 

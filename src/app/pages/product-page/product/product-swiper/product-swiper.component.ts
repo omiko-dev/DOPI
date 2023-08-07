@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-swiper',
@@ -12,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
         disableOnInteraction: false,
       }"
       [pagination]="{
-        clickable: true
+        clickable: false
       }"
       class="mySwiper"
     >
