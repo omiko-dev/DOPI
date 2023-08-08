@@ -2,28 +2,24 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser } from '../Dto/User';
 import { IProduct } from '../Dto/Product';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private readonly http: HttpClient) {}
+  constructor(private readonly http: HttpClient) { }
+
+  USER: IUser | undefined;
 
   getUser(token: string) {
     const Headers = { Authorization: `Bearer ${token}` };
 
-    return this.http.get<IUser>('https://localhost:7008/api/User/Profile', {
+    return this.http.get<any>('https://localhost:7008/api/User/Profile', {
       headers: Headers,
     });
   }
 
-  getUserCart(token: string) {
-    const Headers = { Authorization: `Bearer ${token}` };
-
-    return this.http.get('https://localhost:7008/api/User/GetCart', {
-      headers: Headers,
-    });
-  }
 
   addUserCart(token: string, product: IProduct) {
     const Headers = { Authorization: `Bearer ${token}` };
@@ -45,16 +41,6 @@ export class UserService {
     );
   }
 
-  getUserPurchase(token: string) {
-    const Headers = { Authorization: `Bearer ${token}` };
-
-    return this.http.get<IUser>(
-      'https://localhost:7008/api/User/GetPurchaseProduct',
-      {
-        headers: Headers,
-      }
-    );
-  }
 
   addUserPurchase(token: string, product: IProduct) {
     const Headers = { Authorization: `Bearer ${token}` };

@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { IUser } from 'src/app/Dto/User';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +9,21 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+  UserData: any | undefined;
+
+  constructor(private readonly userService: UserService) {
+    var token = localStorage.getItem("token")
+    if(token){
+      this.userService.getUser(token!).subscribe(data => {
+        this.UserData = data;
+        console.log(this.UserData.name);
+
+      });
+    }
+  }
+
   WindowScroll: number = 0;
   Root = document.documentElement;
-
 
   @HostListener('window:scroll', ['$event'])
   OnWindowScroll(event: Event) {

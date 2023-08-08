@@ -8,7 +8,7 @@
   </div>
 
   <nav>
-    <app-home-login/>
+    <app-home-login [UserName]="UserData?.name"/>
 
     <app-home-logo [ngClass]="LogoAnimation ? '' : 'home_logo_up' "/>
 

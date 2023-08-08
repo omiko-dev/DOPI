@@ -39,6 +39,7 @@ import { ProductService } from './Services/product.service';
 import { UserService } from './Services/user.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ProductSwiperComponent } from './pages/product-page/product/product-swiper/product-swiper.component';
+import { HomeLoginPopupComponent } from './pages/home-page/home-login/home-login-popup/home-login-popup.component';
 
 
 
@@ -69,6 +70,7 @@ import { ProductSwiperComponent } from './pages/product-page/product/product-swi
     ProductPageComponent,
     ProductComponent,
     ProductSwiperComponent,
+    HomeLoginPopupComponent,
   ],
   imports: [
     BrowserModule,
