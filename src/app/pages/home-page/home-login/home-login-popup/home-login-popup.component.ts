@@ -6,7 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
   selector: 'app-home-login-popup',
   template: `
     <div>
-      <button>Show Your Profile</button>
+      <button (click)="ShowProfile()">Profile</button>
       <button (click)="LogOut()">Log Out</button>
     </div>
   `,
@@ -38,5 +38,9 @@ export class HomeLoginPopupComponent {
     localStorage.removeItem('token');
     this.cookie.delete('Refresh_Token');
     this.router.navigate(['/log/login']);
+  }
+
+  ShowProfile() {
+    this.router.navigate(['/profile'])
   }
 }

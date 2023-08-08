@@ -5,10 +5,13 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterComponent } from './login-form/register/register.component';
 import { LoginComponent } from './login-form/login/login.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { AuthGuard } from './Guard/auth.guard';
 
 const routes: Routes = [
 
-  { path: '', component: PagesComponent },
+  { path: '', component: HomePageComponent },
 
   {
     path: 'log',
@@ -20,7 +23,11 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'product', component: ProductPageComponent }
+  { path: 'product', component: ProductPageComponent },
+
+  { path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard] },
+
+  { path: '**', redirectTo: '/' }
 
 ];
 

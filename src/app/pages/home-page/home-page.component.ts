@@ -16,8 +16,6 @@ export class HomePageComponent implements OnInit {
     if(token){
       this.userService.getUser(token!).subscribe(data => {
         this.UserData = data;
-        console.log(this.UserData.name);
-
       });
     }
   }

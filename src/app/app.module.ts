@@ -32,14 +32,16 @@ import { ProductCardComponent } from './pages/home-page/home-products/product-ca
 import { ProductFilterComponent } from './pages/home-page/home-products/product-filter/product-filter.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { ProductComponent } from './pages/product-page/product/product.component';
+import { ProductSwiperComponent } from './pages/product-page/product/product-swiper/product-swiper.component';
+import { HomeLoginPopupComponent } from './pages/home-page/home-login/home-login-popup/home-login-popup.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 // Services
 import { AuthService } from './Services/auth.service';
 import { ProductService } from './Services/product.service';
 import { UserService } from './Services/user.service';
 import { CookieService } from 'ngx-cookie-service';
-import { ProductSwiperComponent } from './pages/product-page/product/product-swiper/product-swiper.component';
-import { HomeLoginPopupComponent } from './pages/home-page/home-login/home-login-popup/home-login-popup.component';
+import { AuthGuard } from './Guard/auth.guard';
 
 
 
@@ -71,6 +73,7 @@ import { HomeLoginPopupComponent } from './pages/home-page/home-login/home-login
     ProductComponent,
     ProductSwiperComponent,
     HomeLoginPopupComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,7 @@ import { HomeLoginPopupComponent } from './pages/home-page/home-login/home-login
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [CookieService, AuthService, ProductService, UserService],
+  providers: [CookieService, AuthService, ProductService, UserService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
