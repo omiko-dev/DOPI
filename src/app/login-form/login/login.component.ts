@@ -10,10 +10,14 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
-  constructor(private authService: AuthService, private _router: Router, private userService: UserService) { }
-
+  ShowPasswrod: boolean = false;
   Incorrect: boolean = false;
+
+  constructor(private authService: AuthService, private _router: Router, private userService: UserService)
+  {
+    this.ShowPasswrod = false;
+  }
+
 
   LoginDto: ILoginDto = {
     Email: '',
@@ -24,7 +28,6 @@ export class LoginComponent {
 
     if (data.invalid)
       return;
-
 
     this.authService.Login(this.LoginDto).subscribe(
       data => {
@@ -38,8 +41,11 @@ export class LoginComponent {
         this.Incorrect = true;
       }
 
-
     )
+  }
+
+  showPassword() {
+    this.ShowPasswrod = !this.ShowPasswrod;
   }
 
 }

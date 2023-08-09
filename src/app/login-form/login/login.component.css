@@ -9,14 +9,14 @@ form div {
 }
 
 label {
+  position: relative;
   display: block;
   margin-bottom: 5px;
   width: 100%;
   padding-left: 19px;
 }
 
-input[type=email],
-input[type=password] {
+input {
   width: 95%;
   padding: 8px;
   margin-bottom: 15px;
@@ -39,4 +39,11 @@ button {
 
 button:active {
   box-shadow: -1px -1px 1px;
+}
+
+.eye {
+  cursor: pointer;
+  position: absolute;
+  right: 6%;
+  top: 41px;
 }

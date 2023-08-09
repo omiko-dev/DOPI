@@ -12,11 +12,14 @@ export class RegisterComponent {
   OtherEmailReq: boolean = false;
   InvalidInput: boolean = false;
   InvalidRepeatPass: boolean = false;
+  ShowPasswrod: boolean = false;
 
   constructor(
     private router: Router,
     private readonly authService: AuthService
-  ) {}
+  ) {
+    this.ShowPasswrod = false;
+  }
 
   user = {
     Email: '',
@@ -35,12 +38,11 @@ export class RegisterComponent {
       return;
     }
 
-
     var newUser: IRegisterDto = {
       Email: this.user.Email,
       Name: this.user.Name,
-      PasswordHash: this.user.Password
-    }
+      PasswordHash: this.user.Password,
+    };
 
     this.authService.Register(newUser).subscribe(
       (data) => {
@@ -50,9 +52,13 @@ export class RegisterComponent {
       (err) => {
         this.OtherEmailReq = true;
         this.InvalidRepeatPass = false;
-        this.InvalidInput = false;;
+        this.InvalidInput = false;
       }
     );
+  }
+
+  showPassword() {
+    this.ShowPasswrod = !this.ShowPasswrod;
   }
 }
 

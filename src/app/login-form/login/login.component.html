@@ -11,8 +11,13 @@
     <br>
     <br>
 
-    <label for="Password">Enter Password</label>
-    <input type="password" name="Password"  [(ngModel)]="LoginDto.Password" required minlength="6" #password="ngModel">
+    <label for="Password">Enter Password
+      <app-eye-icon *ngIf="ShowPasswrod" (click)="showPassword()" class="eye"/>
+      <app-eye-slash-icon *ngIf="!ShowPasswrod" (click)="showPassword()" class="eye"/>
+    </label>
+    <input  [type]="ShowPasswrod ? 'text' : 'password'" name="Password"  [(ngModel)]="LoginDto.Password" required minlength="6" #password="ngModel">
+
+
     <div *ngIf="password.invalid && (password.dirty || password.touched)">
       <span *ngIf="password.errors?.['minlength']" class="invalid-feedback">Minimum 6 Symbol</span>
 

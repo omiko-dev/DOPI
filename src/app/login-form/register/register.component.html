@@ -20,16 +20,22 @@
       </span>
     </div>
 
-    <label for="Password">Enter Password *</label>
-    <input type="password" name="Password" [(ngModel)]="user.Password" required minlength="6" #passwordInput="ngModel">
+    <label for="Password">Enter Password *
+      <app-eye-icon *ngIf="ShowPasswrod" (click)="showPassword()" class="eye" />
+      <app-eye-slash-icon *ngIf="!ShowPasswrod" (click)="showPassword()" class="eye" />
+    </label>
+    <input [type]="ShowPasswrod ? 'text' : 'password'" name="Password" name="Password" [(ngModel)]="user.Password" required minlength="6" #passwordInput="ngModel">
     <div *ngIf="passwordInput.invalid && Submit">
       <span class="invalid-feedback" *ngIf="passwordInput.errors?.['minlength']" >
         Enter Minimum 6 Symbol!
       </span>
     </div>
 
-    <label for="PasswordR">Repeat Password *</label>
-    <input type="password" name="PasswordR" [(ngModel)]="user.PasswordRepeat" required
+    <label for="PasswordR">Repeat Password *
+      <app-eye-icon *ngIf="ShowPasswrod" (click)="showPassword()" class="eye" />
+      <app-eye-slash-icon *ngIf="!ShowPasswrod" (click)="showPassword()" class="eye" />
+    </label>
+    <input [type]="ShowPasswrod ? 'text' : 'password'" name="Password" name="PasswordR" [(ngModel)]="user.PasswordRepeat" required
       #passwordRepeatInput="ngModel">
     <div *ngIf="InvalidRepeatPass">
       <span class="invalid-feedback">
