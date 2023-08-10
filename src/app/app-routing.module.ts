@@ -25,7 +25,7 @@ const routes: Routes = [
 
   { path: 'product', component: ProductPageComponent },
 
-  { path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfilePageComponent },
 
   { path: '**', redirectTo: '/' }
 

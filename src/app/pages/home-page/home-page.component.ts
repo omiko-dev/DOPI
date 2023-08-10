@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
 
   constructor(private readonly userService: UserService) {
     var token = localStorage.getItem("token")
-    if(token){
+    if(token != null){
       this.userService.getUser(token!).subscribe(data => {
         this.UserData = data;
       });

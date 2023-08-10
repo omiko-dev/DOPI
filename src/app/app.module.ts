@@ -36,6 +36,8 @@ import { HomeLoginPopupComponent } from './pages/home-page/home-login/home-login
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { EyeIconComponent } from './Icons/eye-icon.component';
 import { EyeSlashIconComponent } from './Icons/eye-slash-icon.component';
+import { ProfileUserInformationComponent } from './pages/profile-page/profile-user-information/profile-user-information.component';
+import { InfoEditIconComponent } from './Icons/info-edit-icon.component';
 
 // Services
 import { AuthService } from './Services/auth.service';
@@ -77,6 +79,8 @@ import { AuthGuard } from './Guard/auth.guard';
     ProfilePageComponent,
     EyeIconComponent,
     EyeSlashIconComponent,
+    ProfileUserInformationComponent,
+    InfoEditIconComponent,
   ],
   imports: [
     BrowserModule,

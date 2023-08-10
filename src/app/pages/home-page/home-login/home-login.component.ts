@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-home-login',
@@ -13,6 +12,7 @@ import { UserService } from 'src/app/Services/user.service';
         xmlns="http://www.w3.org/2000/svg"
         class="bi bi-person-circle"
         viewBox="0 0 16 16"
+        [ngClass]="UserName == undefined ? '' : 'active'"
       >
         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
         <path
@@ -51,6 +51,7 @@ import { UserService } from 'src/app/Services/user.service';
 
       section .active {
         color: gold;
+        fill: gold;
       }
 
       .popup {
