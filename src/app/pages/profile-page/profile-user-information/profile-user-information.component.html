@@ -20,8 +20,8 @@
 
   <div class="btns">
 
-    <button class="active" (click)="cartActive()"><p>Carts</p></button>
-    <button><p>Purchase</p></button>
+    <button [ngClass]="!CartActive ? 'active' : '' " (click)="cartActive()"><p>Carts</p></button>
+    <button [ngClass]="!PurchaseActive ? 'active' : '' " (click)="purchaseActive()"><p>Purchase</p></button>
 
   </div>
 

@@ -1,0 +1,7 @@
+section div {
+  display: inline-flex;
+  border: 1px solid;
+}
+section div img {
+  height: 250px;
+}

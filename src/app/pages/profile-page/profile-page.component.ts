@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { productType } from './profile-user-information/profile-user-information.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class ProfilePageComponent {
 
-  
+  ProductType: productType = 'purchase';
+
+
+  productType(_event: productType) {
+    this.ProductType = _event;
+
+  }
 
 }

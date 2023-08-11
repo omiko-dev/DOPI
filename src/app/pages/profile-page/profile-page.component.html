@@ -13,9 +13,9 @@
 
 
     <div>
-      <app-profile-user-information/>
+      <app-profile-user-information (Product)="productType($event)"/>
 
-
+      <app-profile-product-info [ProductType]="ProductType"/>
 
     </div>
 

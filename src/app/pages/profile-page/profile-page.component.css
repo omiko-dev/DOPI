@@ -23,3 +23,8 @@ main section div app-profile-user-information {
   border: 1px solid;
   display: block;
 }
+main section div app-profile-product-info {
+  width: 100%;
+  height: 65%;
+  display: block;
+}

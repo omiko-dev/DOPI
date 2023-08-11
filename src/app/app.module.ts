@@ -47,6 +47,9 @@ import { CookieService } from 'ngx-cookie-service';
 
 // Guards
 import { AuthGuard } from './Guard/auth.guard';
+import { ProfileProductInfoComponent } from './pages/profile-page/profile-product-info/profile-product-info.component';
+import { ProfileProductCartComponent } from './pages/profile-page/profile-product-info/profile-product-cart/profile-product-cart.component';
+import { ProfileProductPurchaseComponent } from './pages/profile-page/profile-product-info/profile-product-purchase/profile-product-purchase.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +84,9 @@ import { AuthGuard } from './Guard/auth.guard';
     EyeSlashIconComponent,
     ProfileUserInformationComponent,
     InfoEditIconComponent,
+    ProfileProductInfoComponent,
+    ProfileProductCartComponent,
+    ProfileProductPurchaseComponent,
   ],
   imports: [
     BrowserModule,
