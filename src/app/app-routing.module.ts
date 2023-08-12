@@ -23,7 +23,7 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'product', component: ProductPageComponent },
+  { path: 'product/:id', component: ProductPageComponent },
 
   { path: 'profile', component: ProfilePageComponent },
 

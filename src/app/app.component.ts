@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { AuthService } from './Services/auth.service';
 import { CookieService } from 'ngx-cookie-service';
 import { UserService } from './Services/user.service';
@@ -8,7 +8,7 @@ import { UserService } from './Services/user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   title = 'choco';
 
   constructor(
@@ -26,5 +26,9 @@ export class AppComponent {
         }
       );
     }
+  }
+
+  ngOnDestroy(): void {
+    localStorage.removeItem('token');
   }
 }

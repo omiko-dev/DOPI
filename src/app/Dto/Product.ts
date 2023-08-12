@@ -1,3 +1,5 @@
+import { CartProduct } from "./CartProduct";
+
 export interface IProduct {
   id: number;
   productName: string;
@@ -9,6 +11,8 @@ export interface IProduct {
   allergens: string[];
   imageURL: string[];
   flavor: number;
+  cart: CartProduct[],
+  purchaseProduct: CartProduct[]
 }
 
 enum Flavor {

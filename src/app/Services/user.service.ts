@@ -21,8 +21,15 @@ export class UserService {
   }
 
 
-  addUserCart(token: string, product: IProduct) {
+  addUserCart(product: any): any {
+
+    var token = localStorage.getItem('token');
+    if (token == null)
+      return null;
+
     const Headers = { Authorization: `Bearer ${token}` };
+    console.log(product);
+
 
     return this.http.post(
       'https://localhost:7008/api/User/SetCart',

@@ -8,7 +8,7 @@ import { productType } from './profile-user-information/profile-user-information
 })
 export class ProfilePageComponent {
 
-  ProductType: productType = 'purchase';
+  ProductType: productType = 'cart';
 
 
   productType(_event: productType) {

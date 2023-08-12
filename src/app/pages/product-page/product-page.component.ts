@@ -7,14 +7,4 @@ import { IProduct } from 'src/app/Dto/Product';
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.scss']
 })
-export class ProductPageComponent implements OnInit{
-
-  Product: any;
-  constructor(private param: ActivatedRoute){}
-
-  ngOnInit(): void {
-    this.Product = this.param.snapshot.queryParams;
-  }
-
-
-}
+export class ProductPageComponent{ }

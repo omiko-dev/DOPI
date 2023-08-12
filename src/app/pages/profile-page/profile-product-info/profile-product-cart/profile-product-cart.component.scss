@@ -1,0 +1,36 @@
+section
+{
+
+  padding: 10px;
+  display: flex;
+  gap: 25px;
+
+  .main
+  {
+
+    display: inline-grid;
+    padding: 10px;
+    border: 1px dashed;
+    background-color: #fff;
+
+    img
+    {
+      height: 275px;
+    }
+
+
+    aside
+    {
+
+      display: grid;
+
+      p
+      {
+        margin: 0;
+      }
+
+    }
+
+  }
+
+}

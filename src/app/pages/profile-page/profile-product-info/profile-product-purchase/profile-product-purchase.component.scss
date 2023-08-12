@@ -2,15 +2,34 @@
 section
 {
 
-  div
+  padding: 10px;
+  display: flex;
+  gap: 25px;
+
+  .main
   {
 
-    display: inline-flex;
-    border: 1px solid;
+    display: inline-grid;
+    padding: 10px;
+    border: 1px dashed;
+    background-color: #fff;
 
     img
     {
-      height: 250px;
+      height: 275px;
+    }
+
+
+    aside
+    {
+
+      display: grid;
+
+      p
+      {
+        margin: 0;
+      }
+
     }
 
   }

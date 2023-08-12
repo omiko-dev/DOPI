@@ -14,6 +14,10 @@ export class ProductService {
     return this.http.get<IProduct[]>('https://localhost:7008/api/Product');
   }
 
+  getProductById(id: number) {
+    return this.http.get<IProduct>(`https://localhost:7008/api/Product/${id}`);
+  }
+
 
 
 

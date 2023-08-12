@@ -1,1 +1,22 @@
-<p>profile-product-cart works!</p>
+
+
+<section>
+
+
+  <div *ngFor="let product of data | async" class="main" routerLink="/product" [queryParams]="product">
+      <img src="../../../../../assets/chocochoco.jpg" alt="chocochoco">
+
+
+      <aside>
+        <h4>{{ product.productName }}</h4>
+        <p>{{ product.price }}$</p>
+        <p><i>{{ product.brand }}</i></p>
+        <p>quantity: {{ product.count }}</p>
+      </aside>
+
+  </div>
+
+
+</section>
+
+

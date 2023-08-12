@@ -34,5 +34,5 @@ import { Component, Input } from '@angular/core';
   ],
 })
 export class ProductSwiperComponent {
-  @Input() imagesUrl!: string[];
+  @Input() imagesUrl?: string[];
 }

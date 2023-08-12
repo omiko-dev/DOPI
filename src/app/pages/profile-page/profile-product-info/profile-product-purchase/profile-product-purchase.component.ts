@@ -15,8 +15,7 @@ export class ProfileProductPurchaseComponent implements OnInit {
     var token = localStorage.getItem('token');
     this.data = this.userService.getUser(token!).pipe(
       map((data) => {
-        console.log(data);
-        return data.cart;
+        return data.purchaseProduct;
       }),
       catchError((err) => err)
     );

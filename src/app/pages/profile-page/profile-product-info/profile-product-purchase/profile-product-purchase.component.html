@@ -3,13 +3,15 @@
 <section>
 
 
-  <div *ngFor="let product of data | async">
-      <img src="../../../../../assets/chocochoco.jpg" alt="">
+  <div *ngFor="let product of data | async" class="main">
+      <img src="../../../../../assets/chocochoco.jpg" alt="chocochoco">
 
 
       <aside>
         <h4>{{ product.productName }}</h4>
-        <p>{{ product.price }}</p>
+        <p>{{ product.price }}$</p>
+        <p><i>{{ product.brand }}</i></p>
+        <p>quantity: {{ product.count }}</p>
       </aside>
 
   </div>
