@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { IUser } from '../Dto/User';
 import { IProduct } from '../Dto/Product';
 import { Observable } from 'rxjs';
+import { CartProduct } from '../Dto/CartProduct';
 
 @Injectable({
   providedIn: 'root',
@@ -44,6 +45,15 @@ export class UserService {
     return this.http.post(
       'https://localhost:7008/api/User/DeleteCart',
       product,
+      { headers: Headers }
+    );
+  }
+
+  GetUserCart(token: string) {
+    const Headers = { Authorization: `Bearer ${token}` };
+
+    return this.http.get<CartProduct[]>(
+      'https://localhost:7008/api/User/GetCart',
       { headers: Headers }
     );
   }

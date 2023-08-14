@@ -2,9 +2,9 @@
 
 <section>
 
-
-  <div *ngFor="let product of data | async" class="main" routerLink="/product" [queryParams]="product">
-      <img src="../../../../../assets/chocochoco.jpg" alt="chocochoco">
+  <span *ngIf="Length == 0">No Contect</span>
+  <div *ngFor="let product of data" class="main" [routerLink]="'/product/1'" style="cursor: pointer;">
+      <img [src]="product.imageURL[0]" alt="chocochoco">
 
 
       <aside>

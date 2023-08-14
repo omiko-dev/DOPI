@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { catchError, map } from 'rxjs';
+import { CartProduct } from 'src/app/Dto/CartProduct';
 import { UserService } from 'src/app/Services/user.service';
 
 @Component({
@@ -11,13 +12,19 @@ export class ProfileProductCartComponent implements OnInit{
   constructor(private readonly userService: UserService) {}
 
   data: any;
+  Length!: number;
   ngOnInit(): void {
     var token = localStorage.getItem('token');
-    this.data = this.userService.getUser(token!).pipe(
-      map((data) => {
-        return data.cart;
-      }),
-      catchError((err) => err)
-    );
+    this.userService.GetUserCart(token!).subscribe(
+      (cart): any => {
+        this.data = cart;
+        console.log(this.data);
+        this.Length = this.data.length;
+
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
 }

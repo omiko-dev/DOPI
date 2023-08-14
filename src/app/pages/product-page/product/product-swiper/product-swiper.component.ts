@@ -16,7 +16,7 @@ import { Component, Input } from '@angular/core';
       class="mySwiper"
     >
       <ng-template swiperSlide *ngFor="let img of imagesUrl">
-        <img [src]="img" alt="" />
+        <img [src]="img"/>
       </ng-template>
     </swiper>
   `,

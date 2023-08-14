@@ -24,7 +24,7 @@ export class ProductComponent {
   ngOnInit(): void {
     var id: any = this.param.snapshot.params;
     this.productService.getProductById(+id.id).subscribe(
-      (data) => {
+      (data): any => {
         this.Data = data;
         this.flavor = Flavor[data.flavor];
         console.log(this.Data);

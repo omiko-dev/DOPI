@@ -4,23 +4,23 @@
 
     <div class="product-swiper">
       <div>
-        <app-product-swiper [imagesUrl]="Data.imageURL"/>
+        <app-product-swiper [imagesUrl]="Data?.imageURL"/>
       </div>
     </div>
 
     <aside>
 
-      <h1>{{Data.productName}}</h1>
+      <h1>{{Data?.productName}}</h1>
 
       <div class="desc">
         <span>Description:</span>
-        <p>{{Data.description}}</p>
+        <p>{{Data?.description}}</p>
       </div>
 
       <hr>
 
       <div class="brend">
-        <p>Brand: {{Data.brand}}</p>
+        <p>Brand: {{Data?.brand}}</p>
       </div>
 
       <hr>
@@ -33,13 +33,13 @@
 
       <div class="ingredients">
         <p>ingredients: </p>
-        <span *ngFor="let ingredients of Data.ingredients; let i = index">{{i+1}}) {{ingredients}}; </span>
+        <span *ngFor="let ingredients of Data?.ingredients; let i = index">{{i+1}}) {{ingredients}}; </span>
       </div>
 
       <hr>
 
       <div class="cocoaProc">
-        <p>Cocoa Percentage: {{Data.cocoaPercentage}}%</p>
+        <p>Cocoa Percentage: {{Data?.cocoaPercentage}}%</p>
       </div>
 
       <hr>
@@ -48,7 +48,7 @@
 
               <div class="price">
                 <span>Price: </span>
-                <span class="priceNum">{{Data.price}}$</span>
+                <span class="priceNum">{{Data?.price}}$</span>
               </div>
 
               <div class="button">

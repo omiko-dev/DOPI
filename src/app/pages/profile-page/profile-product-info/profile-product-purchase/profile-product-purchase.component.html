@@ -2,8 +2,9 @@
 
 <section>
 
+  <span *ngIf="data == undefined">No Content</span>
 
-  <div *ngFor="let product of data | async" class="main">
+  <div *ngFor="let product of data | async" class="main"  style="cursor: pointer;">
       <img src="../../../../../assets/chocochoco.jpg" alt="chocochoco">
 
 
