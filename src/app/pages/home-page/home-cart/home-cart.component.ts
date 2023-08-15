@@ -14,6 +14,8 @@ import { Component } from '@angular/core';
         />
       </svg>
     </section>
+
+    <app-cart-section/>
   `,
   styles: [
     `
@@ -25,6 +27,13 @@ import { Component } from '@angular/core';
           height: 29px;
           fill: lightslategray;
         }
+      }
+
+
+      app-cart-section{
+        position: absolute;
+        top:0;
+        right: -30px;
       }
     `,
   ],

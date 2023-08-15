@@ -1,0 +1,74 @@
+aside {
+  width: 300px;
+  height: 100vh;
+  background-color: #523a3a;
+}
+aside section {
+  padding: 20px 10px 10px 20px;
+}
+aside section h1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 35px;
+  font-weight: 300;
+  color: white;
+}
+aside section h1 app-back-left-icon {
+  display: inline-flex;
+  width: 25px;
+}
+aside section .main {
+  height: 84vh;
+  width: 100%;
+  border: 1px solid #fff;
+}
+aside section .main .cart {
+  border: 1px solid red;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+}
+aside section .main .cart img {
+  width: 66px;
+  height: 66px;
+}
+aside section .main .cart .info {
+  width: 167px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 19px;
+}
+aside section .main .cart .info div {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 67px;
+  border: 1px solid #fff;
+}
+aside section .main .cart .info div a, aside section .main .cart .info div p {
+  color: white;
+}
+aside section .main .cart .info h1 {
+  display: inline;
+  font-size: 24px;
+  word-wrap: break-word;
+  width: 86px;
+}
+
+hr {
+  border-color: #fff;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}

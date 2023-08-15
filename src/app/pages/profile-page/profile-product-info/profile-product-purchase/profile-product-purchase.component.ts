@@ -8,18 +8,20 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./profile-product-purchase.component.scss'],
 })
 export class ProfileProductPurchaseComponent implements OnInit {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) { }
 
   data: any;
+  Length!: number;
   ngOnInit(): void {
     var token = localStorage.getItem('token');
-    this.data = this.userService.getUser(token!).pipe(
-      map((data) => {
-        console.log(data);
-
-        return data.purchaseProduct;
-      }),
-      catchError((err) => err)
+    this.userService.GetUserPurchase(token!).subscribe(
+      (purchase): any => {
+        this.data = purchase;
+        this.Length = this.data.length;
+      },
+      (err) => {
+        console.log(err);
+      }
     );
   }
 }

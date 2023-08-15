@@ -9,7 +9,7 @@ import { CartProduct } from '../Dto/CartProduct';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private readonly http: HttpClient) { }
+  constructor(private readonly http: HttpClient) {}
 
   USER: IUser | undefined;
 
@@ -21,22 +21,16 @@ export class UserService {
     });
   }
 
-
   addUserCart(product: any): any {
-
     var token = localStorage.getItem('token');
-    if (token == null)
-      return null;
+    if (token == null) return null;
 
     const Headers = { Authorization: `Bearer ${token}` };
     console.log(product);
 
-
-    return this.http.post(
-      'https://localhost:7008/api/User/SetCart',
-      product,
-      { headers: Headers }
-    );
+    return this.http.post('https://localhost:7008/api/User/SetCart', product, {
+      headers: Headers,
+    });
   }
 
   deleteUserCart(token: string, product: IProduct) {
@@ -58,13 +52,21 @@ export class UserService {
     );
   }
 
-
   addUserPurchase(token: string, product: IProduct) {
     const Headers = { Authorization: `Bearer ${token}` };
 
     return this.http.post(
       'https://localhost:7008/api/User/AddPurchaseProduct',
       product,
+      { headers: Headers }
+    );
+  }
+
+  GetUserPurchase(token: string) {
+    const Headers = { Authorization: `Bearer ${token}` };
+
+    return this.http.get<CartProduct[]>(
+      'https://localhost:7008/api/User/GetPurchaseProduct',
       { headers: Headers }
     );
   }

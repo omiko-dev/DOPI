@@ -1,23 +1,20 @@
 
-
 <section>
 
-  <span *ngIf="data == undefined">No Content</span>
+  <span *ngIf="Length == 0">No Contect</span>
+  <div *ngFor="let product of data" class="main" [routerLink]="'/product/' + product.idj" style="cursor: pointer;">
+    <img [src]="product.imageURL[0]" alt="chocochoco">
 
-  <div *ngFor="let product of data | async" class="main"  style="cursor: pointer;">
-      <img src="../../../../../assets/chocochoco.jpg" alt="chocochoco">
 
-
-      <aside>
-        <h4>{{ product.productName }}</h4>
-        <p>{{ product.price }}$</p>
-        <p><i>{{ product.brand }}</i></p>
-        <p>quantity: {{ product.count }}</p>
-      </aside>
+    <aside>
+      <h4>{{ product.productName }}</h4>
+      <p>{{ product.price }}$</p>
+      <p><i>{{ product.brand }}</i></p>
+      <p>quantity: {{ product.count }}</p>
+    </aside>
 
   </div>
 
 
 </section>
-
 

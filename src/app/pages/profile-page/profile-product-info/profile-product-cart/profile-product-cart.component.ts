@@ -18,7 +18,6 @@ export class ProfileProductCartComponent implements OnInit{
     this.userService.GetUserCart(token!).subscribe(
       (cart): any => {
         this.data = cart;
-        console.log(this.data);
         this.Length = this.data.length;
 
       },

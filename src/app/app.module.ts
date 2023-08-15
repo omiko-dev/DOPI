@@ -50,6 +50,8 @@ import { AuthGuard } from './Guard/auth.guard';
 import { ProfileProductInfoComponent } from './pages/profile-page/profile-product-info/profile-product-info.component';
 import { ProfileProductCartComponent } from './pages/profile-page/profile-product-info/profile-product-cart/profile-product-cart.component';
 import { ProfileProductPurchaseComponent } from './pages/profile-page/profile-product-info/profile-product-purchase/profile-product-purchase.component';
+import { CartSectionComponent } from './pages/home-page/home-cart/cart-section/cart-section.component';
+import { ExitIconComponent } from './Icons/exit-icon.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +89,8 @@ import { ProfileProductPurchaseComponent } from './pages/profile-page/profile-pr
     ProfileProductInfoComponent,
     ProfileProductCartComponent,
     ProfileProductPurchaseComponent,
+    CartSectionComponent,
+    ExitIconComponent,
   ],
   imports: [
     BrowserModule,
