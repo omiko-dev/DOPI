@@ -21,26 +21,26 @@ export class UserService {
     });
   }
 
-  addUserCart(product: any): any {
+  addUserCart(product: CartProduct): any {
     var token = localStorage.getItem('token');
     if (token == null) return null;
 
     const Headers = { Authorization: `Bearer ${token}` };
-    console.log(product);
 
     return this.http.post('https://localhost:7008/api/User/SetCart', product, {
       headers: Headers,
     });
   }
 
-  deleteUserCart(token: string, product: IProduct) {
+  deleteUserCart(id: number): any {
+    var token = localStorage.getItem('token');
+    if (token == null) return null;
+
     const Headers = { Authorization: `Bearer ${token}` };
 
-    return this.http.post(
-      'https://localhost:7008/api/User/DeleteCart',
-      product,
-      { headers: Headers }
-    );
+    return this.http.delete('https://localhost:7008/api/User/DeleteCart?id='+ id, {
+      headers: Headers,
+    });
   }
 
   GetUserCart(token: string) {

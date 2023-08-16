@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-home-cart',
   template: `
-    <section>
+    <section (click)="sideOpen()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="bi bi-cart-check-fill"
@@ -15,7 +15,10 @@ import { Component } from '@angular/core';
       </svg>
     </section>
 
-    <app-cart-section/>
+    <app-cart-section
+      (SideMove)="sideClose($event)"
+      [ngClass]="sideMove ? 'open' : 'close'"
+    />
   `,
   styles: [
     `
@@ -29,13 +32,30 @@ import { Component } from '@angular/core';
         }
       }
 
-
-      app-cart-section{
+      app-cart-section {
         position: absolute;
-        top:0;
+        top: 0;
+        transition: 0.5s;
+      }
+
+      .open {
         right: -30px;
+      }
+
+      .close {
+        right: -367px;
       }
     `,
   ],
 })
-export class HomeCartComponent {}
+export class HomeCartComponent {
+  sideMove: boolean = false;
+
+  sideOpen() {
+    this.sideMove = true;
+  }
+
+  sideClose($event: any) {
+    this.sideMove = $event;
+  }
+}

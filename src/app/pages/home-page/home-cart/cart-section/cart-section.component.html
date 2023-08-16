@@ -4,25 +4,28 @@
 
   <section>
 
-    <h1><app-back-left-icon/>  Cart Product  </h1>
+    <h1>
+      <app-back-left-icon (click)="sideClose()"></app-back-left-icon>
+      Cart Product
+    </h1>
     <hr>
 
 
     <div class="main">
 
-      <div class="cart">
+      <div class="cart" *ngFor="let item of data">
 
 
-        <img src="../../../../../assets/black_logo.png" alt="">
+        <img [src]="item.imageURL[0]" alt="">
         <div class="info">
           <h1>
-            title
+            {{ item.productName }}
           </h1>
 
           <div>
-            <a (click)="">-</a>
-            <p>10</p>
-            <a (click)="">+</a>
+            <a (click)="remove(item)">-</a>
+            <p>{{ item.count }}</p>
+            <a (click)="add(item)">+</a>
           </div>
 
         </div>
@@ -32,6 +35,8 @@
 
 
     </div>
+
+    <hr>
 
   </section>
 

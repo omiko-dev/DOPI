@@ -8,6 +8,7 @@ export type CartProduct = {
   id: number;
   imageURL: string[];
   ingredients: string[];
+  count: number;
   price: number;
   productName: string;
   updatedAt: string;

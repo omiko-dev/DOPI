@@ -8,7 +8,7 @@ import { UserService } from './Services/user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent {
   title = 'choco';
 
   constructor(
@@ -28,7 +28,5 @@ export class AppComponent implements OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    localStorage.removeItem('token');
-  }
+
 }
