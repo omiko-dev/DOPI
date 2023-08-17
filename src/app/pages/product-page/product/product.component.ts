@@ -27,7 +27,6 @@ export class ProductComponent {
       (data): any => {
         this.Data = data;
         this.flavor = Flavor[data.flavor];
-        console.log(this.Data);
       },
       (err) => {
         this.router.navigate(['/'])
