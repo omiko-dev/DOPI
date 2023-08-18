@@ -25,7 +25,38 @@ section .sec_1 aside .cards {
   height: 90px;
   padding: 10px 20px;
   display: flex;
+  justify-content: center;
+  border: 1px solid;
 }
+section .sec_1 aside .cards .info {
+  width: 60%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+section .sec_1 aside .cards .info .price {
+  display: flex;
+  justify-content: space-around;
+}
+section .sec_1 aside .cards .info .price .counter {
+  display: flex;
+  gap: 5px;
+  padding: 0 10px;
+  background-color: #d6cccc;
+}
+section .sec_1 aside .cards .info .price .counter a {
+  cursor: pointer;
+}
+
 hr {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+h5 {
   margin: 0;
 }
