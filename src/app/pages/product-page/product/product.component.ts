@@ -40,15 +40,10 @@ export class ProductComponent {
 
     this.userService.addUserCart(this.Data).subscribe(
       (data: any) => {
-        alert("Success Operation");
+        this.router.navigate(['/']);
         return data;
       },
       (err: any) => {
-        alert("Please Register");
-        console.log(err);
-        console.log(this.Data);
-
-
         return err;
       }
     )

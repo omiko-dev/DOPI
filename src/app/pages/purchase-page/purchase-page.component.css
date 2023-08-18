@@ -1,0 +1,17 @@
+nav {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main app-purchase-carts {
+  width: 100vh;
+  height: 80vh;
+}

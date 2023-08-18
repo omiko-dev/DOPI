@@ -52,6 +52,8 @@ import { ProfileProductCartComponent } from './pages/profile-page/profile-produc
 import { ProfileProductPurchaseComponent } from './pages/profile-page/profile-product-info/profile-product-purchase/profile-product-purchase.component';
 import { CartSectionComponent } from './pages/home-page/home-cart/cart-section/cart-section.component';
 import { ExitIconComponent } from './Icons/exit-icon.component';
+import { PurchasePageComponent } from './pages/purchase-page/purchase-page.component';
+import { PurchaseCartsComponent } from './pages/purchase-page/purchase-carts/purchase-carts.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +93,8 @@ import { ExitIconComponent } from './Icons/exit-icon.component';
     ProfileProductPurchaseComponent,
     CartSectionComponent,
     ExitIconComponent,
+    PurchasePageComponent,
+    PurchaseCartsComponent,
   ],
   imports: [
     BrowserModule,
