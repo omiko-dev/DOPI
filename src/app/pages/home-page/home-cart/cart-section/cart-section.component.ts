@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { pipe } from 'rxjs';
 import { CartProduct } from 'src/app/Dto/CartProduct';
 import { UserService } from 'src/app/Services/user.service';
 
@@ -28,40 +29,29 @@ export class CartSectionComponent implements OnInit{
   }
 
   add(product: CartProduct) {
-    console.log(product);
-
     this.userService.addUserCart(product).subscribe(
       (data: any) => {
-        this.getProduct();
-        console.log(this.data);
-
+        this.getProduct()
       },
-      (err: any) => console.log(err)
+      (err: any) => err
     );
   }
 
   remove(product: CartProduct) {
-    console.log(product);
 
       this.userService.deleteUserCart(product.id).subscribe((data: any) => {
         this.getProduct();
 
       },
-      (err: any) => console.log(err)
+      (err: any) => err
     );
   }
 
   private getProduct() {
-    var token = localStorage.getItem('token');
 
-    if (token) {
-      this.userService.GetUserCart(token).subscribe(data => {
-        this.data = data;
-
-
-      }, err => err)
-    }
-
+    this.userService.GetUserCart()?.subscribe(data => {
+      this.data = data;
+    }, err => err)
   }
 
 }

@@ -7,32 +7,33 @@
   <div class="sec_1">
 
 
-    <h3>Carts Product</h3>
+    <h3>My Cart</h3>
 
     <hr>
 
     <aside>
 
 
-      <div class="cards">
+      <div class="cards" *ngFor="let item of CartProduct">
 
 
-        <img src="../../../../assets/black_logo.png" alt="img">
+        <img [src]="item.imageURL" alt="img">
 
         <div class="info">
 
-          <h5>title</h5>
+          <h5>{{ item.productName }}</h5>
 
           <div class="price">
-            <p>10$</p>
+            <p>{{ item.price | currency: 'USD'}}</p>
 
 
             <div class="counter">
-              <a >-</a>
-              <p>1</p>
-              <a >+</a>
+              <a (click)="remove(item)">-</a>
+              <p>{{ item.count }}</p>
+              <a (click)="add(item)">+</a>
             </div>
 
+            <p>| {{ item.price * item.count | currency: 'USD'}}</p>
 
           </div>
 
@@ -50,6 +51,32 @@
 
 
   <div class="sec_2">
+
+    <h3>Order summary</h3>
+
+    <hr>
+
+    <aside>
+        <div class="sub">
+          <h5>Subtotal</h5>
+          <h5>{{fullPrice | currency: 'USD'}}</h5>
+        </div>
+
+        <div class="delivery">
+          <h5 style="cursor: pointer">Estimate Delivery</h5>
+        </div>
+
+        <br>
+        <hr>
+
+        <div class="sub">
+          <h4>Total</h4>
+          <h5>{{fullPrice | currency: 'USD'}}</h5>
+        </div>
+
+        <button class="buy">Buy</button>
+    </aside>
+
 
 
   </div>

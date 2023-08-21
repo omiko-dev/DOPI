@@ -43,7 +43,12 @@ export class UserService {
     });
   }
 
-  GetUserCart(token: string) {
+  GetUserCart() {
+
+    const token = localStorage.getItem('token');
+
+    if (token == null) return null;
+
     const Headers = { Authorization: `Bearer ${token}` };
 
     return this.http.get<CartProduct[]>(

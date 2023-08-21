@@ -14,8 +14,7 @@ export class ProfileProductCartComponent implements OnInit{
   data: any;
   Length!: number;
   ngOnInit(): void {
-    var token = localStorage.getItem('token');
-    this.userService.GetUserCart(token!).subscribe(
+    this.userService.GetUserCart()?.subscribe(
       (cart): any => {
         this.data = cart;
         this.Length = this.data.length;

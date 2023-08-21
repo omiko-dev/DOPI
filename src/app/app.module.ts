@@ -54,6 +54,7 @@ import { CartSectionComponent } from './pages/home-page/home-cart/cart-section/c
 import { ExitIconComponent } from './Icons/exit-icon.component';
 import { PurchasePageComponent } from './pages/purchase-page/purchase-page.component';
 import { PurchaseCartsComponent } from './pages/purchase-page/purchase-carts/purchase-carts.component';
+import { WavesStyleComponent } from './pages/purchase-page/waves-style/waves-style.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { PurchaseCartsComponent } from './pages/purchase-page/purchase-carts/pur
     ExitIconComponent,
     PurchasePageComponent,
     PurchaseCartsComponent,
+    WavesStyleComponent,
   ],
   imports: [
     BrowserModule,
