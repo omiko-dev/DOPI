@@ -38,13 +38,15 @@ export class UserService {
 
     const Headers = { Authorization: `Bearer ${token}` };
 
-    return this.http.delete('https://localhost:7008/api/User/DeleteCart?id='+ id, {
-      headers: Headers,
-    });
+    return this.http.delete(
+      'https://localhost:7008/api/User/DeleteCart?id=' + id,
+      {
+        headers: Headers,
+      }
+    );
   }
 
   GetUserCart() {
-
     const token = localStorage.getItem('token');
 
     if (token == null) return null;
@@ -57,7 +59,12 @@ export class UserService {
     );
   }
 
-  addUserPurchase(token: string, product: IProduct) {
+  BuyProduct(product: CartProduct[]) {
+
+    const token = localStorage.getItem('token');
+
+    if (token == null) return null;
+
     const Headers = { Authorization: `Bearer ${token}` };
 
     return this.http.post(

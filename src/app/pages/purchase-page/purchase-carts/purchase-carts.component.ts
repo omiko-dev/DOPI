@@ -39,6 +39,15 @@ export class PurchaseCartsComponent implements OnInit {
     );
   }
 
+  buyProduct() {
+    if (this.CartProduct !== null) {
+      this.userService.BuyProduct(this.CartProduct)?.subscribe(data => data);
+      this.CartProduct = null;
+      this.fullPrice = 0;
+    }
+  }
+
+
   private getProduct() {
     this.userService.GetUserCart()?.subscribe(
       (data) => {
